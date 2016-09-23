@@ -10,4 +10,15 @@
     <li>OS version: {{jvmStatic.OSVersion}}</li>
     <li>OS name: {{jvmStatic.OSName}}</li>
   </ul>
+
+  <ul>
+    <li>Up time: {{jvmDynamic.upTime}}</li>
+    <li>System load average: {{jvmDynamic.systemLoadAverage}}</li>
+    <li>Current memory usage: {{jvmDynamic.currentMemoryUsage}}</li>
+    <li>Now: {{jvmDynamic.now | date}}</li>
+    <li>Memory usage percentage: {{jvmDynamic.memoryUsagePercentage}}</li>
+    <li>Thread count: {{jvmDynamic.threadCount}}</li>
+    <li>Total threads cpu time: {{jvmDynamic.totalThreadsCpuTime}}</li>
+    <li>Start time: {{jvmDynamic.startTime | date}}</li>
+  </ul>
 </div>
