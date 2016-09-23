@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   constructor(private http: Http) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:23160/bonita/API/platform/jvmStatic/undefined')
+    this.http.get('/bonita/API/platform/jvmStatic/undefined')
       .subscribe(response => {
 
         console.log(response.json());
