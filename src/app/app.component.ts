@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -21,37 +22,37 @@ export class AppComponent implements OnInit {
   constructor(private http: Http) { }
 
   ngOnInit() {
-    this.http.get('/bonita/API/platform/jvmStatic/undefined')
+    this.http.get(`${environment.url}/platform/jvmStatic/undefined`)
       .subscribe(response => {
         this.jvmStatic = response.json();
       });
 
-    this.http.get('/bonita/API/platform/jvmDynamic/undefined')
+    this.http.get(`${environment.url}/platform/jvmDynamic/undefined`)
       .subscribe(response => {
         this.jvmDynamic = response.json();
       });
 
-    this.http.get('/bonita/API/platform/platform/undefined')
+    this.http.get(`${environment.url}/platform/platform/undefined`)
       .subscribe(response => {
         this.plateform = response.json();
       });
 
-    this.http.get('/bonita/API/platform/systemProperty?c=10000&p=0')
+    this.http.get(`${environment.url}/platform/systemProperty?c=10000&p=0`)
       .subscribe(response => {
         this.properties = response.json();
       });
 
-    this.http.get('/bonita/API/platform/tenant?c=10000&p=0')
+    this.http.get(`${environment.url}/platform/tenant?c=10000&p=0`)
       .subscribe(response => {
         this.tenants = response.json();
       });
 
-    this.http.get('/bonita/API/platform/tenant?c=10000&p=0')
+    this.http.get(`${environment.url}/platform/tenant?c=10000&p=0`)
       .subscribe(response => {
         this.tenants = response.json();
       });
 
-    this.http.get('/bonita/API/platform/license')
+    this.http.get(`${environment.url}/platform/license`)
       .subscribe(response => {
         this.license = response.json();
       });
