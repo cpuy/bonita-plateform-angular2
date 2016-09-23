@@ -1,3 +1,5 @@
+7.4.0.alpha01 =>
+
 http://localhost:23160/bonita/platformloginservice?username=platformAdmin&password=platform
 
 ## Conclusion
