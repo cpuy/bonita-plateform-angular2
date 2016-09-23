@@ -1,5 +1,5 @@
 {
-  "/": {
+  "/bonita/API": {
     "target": "http://localhost:23160/",
     "secure": false
   }
