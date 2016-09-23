@@ -9,15 +9,22 @@ import { Http, Response } from '@angular/http';
 export class AppComponent implements OnInit {
   title = 'app works! awesome dude';
 
+  jvmStatic: any = "any";
+
   constructor(private http: Http) { }
 
   ngOnInit() {
     this.http.get('/bonita/API/platform/jvmStatic/undefined')
       .subscribe(response => {
 
-        console.log(response.json());
-
-        // logs the array of races
+        // store the array of the races in the component
+        this.jvmStatic = response.json();
       });
+    // .subscribe(response => {
+
+    //   console.log(response.json());
+
+    //   // logs the array of races
+    // });
   }
 }
