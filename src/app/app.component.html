@@ -1,62 +1,176 @@
 <div>
-  <h1>{{title}}</h1>
+  <h1>Plateform portal</h1>
 
-  <ul>
-    <li>Vendor: {{jvmStatic.jvmVendor}}</li>
-    <li>Nb processors: {{jvmStatic.availableProcessors}}</li>
-    <li>OS arch: {{jvmStatic.OSArch}}</li>
-    <li>JVM version: {{jvmStatic.jvmVersion}}</li>
-    <li>JVM name: {{jvmStatic.jvmName}}</li>
-    <li>OS version: {{jvmStatic.OSVersion}}</li>
-    <li>OS name: {{jvmStatic.OSName}}</li>
-  </ul>
+  <section class="JvmInfos">
+    <h2>Jvm informations</h2>
+    <table>
+      <tr>
+        <td>JVM vendor</td>
+        <td>{{jvmStatic.jvmVendor}}</td>
+      </tr>
+      <tr>
+        <td>JVM name</td>
+        <td>{{jvmStatic.jvmName}}</td>
+      </tr>
+      <tr>
+        <td>JVM version</td>
+        <td>{{jvmStatic.jvmVersion}}</td>
+      </tr>
+      <tr>
+        <td>OS arch</td>
+        <td>{{jvmStatic.OSArch}}</td>
+      </tr>
+      <tr>
+        <td>OS version</td>
+        <td>{{jvmStatic.OSVersion}}</td>
+      </tr>
+      <tr>
+        <td>OS name</td>
+        <td>{{jvmStatic.OSName}}</td>
+      </tr>
+      <tr>
+        <td>Nb processors</td>
+        <td>{{jvmStatic.availableProcessors}}</td>
+      </tr>
+      <tr>
+        <td>Up time</td>
+        <td>{{jvmDynamic.upTime}}</td>
+      </tr>
+      <tr>
+        <td>System load average</td>
+        <td>{{jvmDynamic.systemLoadAverage}}</td>
+      </tr>
+      <tr>
+        <td>Current memory usage</td>
+        <td>{{jvmDynamic.currentMemoryUsage}}</td>
+      </tr>
+      <tr>
+        <td>Memory usage percentage</td>
+        <td>{{jvmDynamic.memoryUsagePercentage}}</td>
+      </tr>
+      <tr>
+        <td>Now</td>
+        <td>{{jvmDynamic.now | date}}</td>
+      </tr>
+      <tr>
+        <td>Thread count</td>
+        <td>{{jvmDynamic.threadCount}}</td>
+      </tr>
+      <tr>
+        <td>Total threads cpu time</td>
+        <td>{{jvmDynamic.totalThreadsCpuTime}}</td>
+      </tr>
+      <tr>
+        <td>Start time</td>
+        <td>{{jvmDynamic.startTime | date}}</td>
+      </tr>
+    </table>
+  </section>
 
-  <ul>
-    <li>Up time: {{jvmDynamic.upTime}}</li>
-    <li>System load average: {{jvmDynamic.systemLoadAverage}}</li>
-    <li>Current memory usage: {{jvmDynamic.currentMemoryUsage}}</li>
-    <li>Now: {{jvmDynamic.now | date}}</li>
-    <li>Memory usage percentage: {{jvmDynamic.memoryUsagePercentage}}</li>
-    <li>Thread count: {{jvmDynamic.threadCount}}</li>
-    <li>Total threads cpu time: {{jvmDynamic.totalThreadsCpuTime}}</li>
-    <li>Start time: {{jvmDynamic.startTime | date}}</li>
-  </ul>
+  <section class="PlateformInfos">
+    <h2>Plateform informations</h2>
+    <tr>
+      <td>Created by</td>
+      <td>{{plateform.createdBy}}</td>
+    </tr>
+    <tr>
+      <td>Creation date</td>
+      <td>{{plateform.created | date}}</td>
+    </tr>
+    <tr>
+      <td>Version</td>
+      <td>{{plateform.version}}</td>
+    </tr>
+    <tr>
+      <td>Initial version</td>
+      <td>{{plateform.initialVersion}}</td>
+    </tr>
+    <tr>
+      <td>Previous version</td>
+      <td>{{plateform.previousVersion}}</td>
+    </tr>
+  </section>
 
-  <ul>
-    <li>Created by: {{plateform.createdBy}}</li>
-    <li>Previous version: {{plateform.previousVersion}}</li>
-    <li>Creation date: {{plateform.created | date}}</li>
-    <li>Initial version: {{plateform.initialVersion}}</li>
-    <li>State: {{plateform.state}}</li>
-    <li>Version: {{plateform.version}}</li>
-  </ul>
+  <section class="LicenseInfos">
+    <h2>License informations</h2>
+    <table>
+      <tr>
+        <td>Start Date</td>
+        <td>{{license.licseStartDate}}</td>
+      </tr>
+      <tr>
+        <td>Duration</td>
+        <td>{{license.duration}}</td>
+      </tr>
+      <tr>
+        <td>Expiration Date</td>
+        <td>{{license.licenseExpirationDate | date}}</td>
+      </tr>
+      <tr>
+        <td>Edition</td>
+        <td>{{license.edition}}</td>
+      </tr>
+      <tr>
+        <td>Subscription start period</td>
+        <td>{{license.subscriptionStartPeriod}}</td>
+      </tr>
+      <tr>
+        <td>Subscription end period</td>
+        <td>{{license.subscriptionEndPeriod}}</td>
+      </tr>
+      <tr>
+        <td>Case counter limit</td>
+        <td>{{license.caseCounterLimit}}</td>
+      </tr>
+      <tr>
+        <td>Case counter</td>
+        <td>{{license.caseCounter}}</td>
+      </tr>
+      <tr>
+        <td>Number of cpu cores</td>
+        <td> {{license.numberOfCPUCores}}</td>
+      </tr>
+      <tr>
+        <td>Licence mode</td>
+        <td>{{license.licenseMode}}</td>
+      </tr>
+    </table>
+  </section>
 
-  <ul>
-    <li *ngFor="let property of properties">{{property.name}}: {{property.value}}</li>
-  </ul>
+  <section class="Tenants">
+    <h2>Tenants</h2>
+    <table>
+      <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Icon</th>
+        <th>Creation date</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>State</th>
+      </thead>
+      <tr *ngFor="let tenant of tenants">
+        <td>{{tenant.id}}</td>
+        <td>{{tenant.name}}</td>
+        <td>{{tenant.description}}</td>
+        <td>{{tenant.icon}}</td>
+        <td>{{tenant.creation | date}}</td>
+        <td>{{tenant.username}}</td>
+        <td>{{tenant.password}}</td>
+        <td>{{tenant.state}}</td>
+      </tr>
+    </table>
+  </section>
 
-  <ul *ngFor="let tenant of tenants">
-    <li>Name: {{tenant.name}}</li>
-    <li>Password: {{tenant.password}}</li>
-    <li>Icon: {{tenant.icon}}</li>
-    <li>Description: {{tenant.description}}</li>
-    <li>Id: {{tenant.id}}</li>
-    <li>State: {{tenant.state}}</li>
-    <li>Creation date: {{tenant.creation | date}}</li>
-    <li>Username: {{tenant.username}}</li>
-  </ul>
+  <section class="SystemProperties">
+    <h2>System properties</h2>
+    <table>
+      <tr *ngFor="let property of properties">
+        <td>{{property.name}}</td>
+        <td>{{property.value}}</td>
+      </tr>
+    </table>
+  </section>
 
-  <ul>
-    <li>Start Date: {{license.licenseStartDate}}</li>
-    <li>Duration: {{license.duration}}</li>
-    <li>Expiration Date: {{license.licenseExpirationDate | date}}</li>
-    <li>Edition: {{license.edition}}</li>
-    <li>Subscription start period: {{license.subscriptionStartPeriod}}</li>
-    <li>Subscription end period: {{license.subscriptionEndPeriod}}</li>
-    <li>Case counter limit: {{license.caseCounterLimit}}</li>
-    <li>Case counter: {{license.caseCounter}}</li>
-    <li>Number of cpu cores: {{license.numberOfCPUCores}}</li>
-    <li>Licence mode: {{license.licenseMode}}</li>
-    
-  </ul>
 </div>
