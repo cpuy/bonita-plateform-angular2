@@ -11,6 +11,8 @@ export class AppComponent implements OnInit {
 
   jvmStatic: any = "";
   jvmDynamic: any = "";
+  plateform: any = "";
+  
 
 
   constructor(private http: Http) { }
@@ -25,5 +27,11 @@ export class AppComponent implements OnInit {
       .subscribe(response => {
         this.jvmDynamic = response.json();
       });
+
+      this.http.get('/bonita/API/platform/platform/undefined')
+      .subscribe(response => {
+        this.plateform = response.json();
+      });
+      
   }
 }
