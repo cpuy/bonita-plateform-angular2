@@ -34,4 +34,15 @@
   <ul>
     <li *ngFor="let property of properties">{{property.name}}: {{property.value}}</li>
   </ul>
+
+  <ul *ngFor="let tenant of tenants">
+    <li>Name: {{tenant.name}}</li>
+    <li>Password: {{tenant.password}}</li>
+    <li>Icon: {{tenant.icon}}</li>
+    <li>Description: {{tenant.description}}</li>
+    <li>Id: {{tenant.id}}</li>
+    <li>State: {{tenant.state}}</li>
+    <li>Creation date: {{tenant.creation | date}}</li>
+    <li>Username: {{tenant.username}}</li>
+  </ul>
 </div>
