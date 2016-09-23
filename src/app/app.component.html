@@ -30,4 +30,8 @@
     <li>State: {{plateform.state}}</li>
     <li>Version: {{plateform.version}}</li>
   </ul>
+
+  <ul>
+    <li *ngFor="let property of properties">{{property.name}}: {{property.value}}</li>
+  </ul>
 </div>
