@@ -21,7 +21,7 @@ http://localhost:23160/bonita/platformloginservice?username=platformAdmin&passwo
 ![We have doc \o/](doc.png)
 
 ## Angular 2
-- Very nice !!!
+- Very nice !!! not used so much...
 - +10000 error managements
 - On est pas perdu
 
