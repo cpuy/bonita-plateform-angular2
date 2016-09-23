@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   plateform: any = "";
   properties: any = "";
   tenants: any = "";
+  license: any = "";
 
 
 
@@ -40,9 +41,19 @@ export class AppComponent implements OnInit {
         this.properties = response.json();
       });
 
-      this.http.get('/bonita/API/platform/tenant?c=10000&p=0')
+    this.http.get('/bonita/API/platform/tenant?c=10000&p=0')
       .subscribe(response => {
         this.tenants = response.json();
+      });
+
+    this.http.get('/bonita/API/platform/tenant?c=10000&p=0')
+      .subscribe(response => {
+        this.tenants = response.json();
+      });
+
+    this.http.get('/bonita/API/platform/license')
+      .subscribe(response => {
+        this.license = response.json();
       });
   }
 }
